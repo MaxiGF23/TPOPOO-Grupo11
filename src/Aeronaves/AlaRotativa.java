@@ -1,6 +1,6 @@
 package Aeronaves;
 
-public class AlaRotativa extends Aeronave {
+public abstract class AlaRotativa extends Aeronave {
     private int cantAspas;
     private int cantRotores;
 

@@ -1,11 +1,13 @@
 package Aeronaves;
+import interfaces.Identificable;
 
-public abstract class Aeronave {
-    private String modelo;
-    private String numDeSerie;
-    private int pesoMaximo;
-    private int capacidad;
-    private double velocidadMaxima;
+public abstract class Aeronave implements Identificable {
+    protected String modelo;
+    protected String numDeSerie;
+    protected int pesoMaximo;
+    protected int capacidad;
+    protected double velocidadMaxima;
+    protected boolean pruebaRealizada;
 
     public Aeronave(String modelo, String numDeSerie, int pesoMaximo, int capacidad, double velocidadMaxima)
     {
@@ -30,5 +32,19 @@ public abstract class Aeronave {
         return this.numDeSerie;
     }
 
+    public String getModelo(){
+        return this.modelo;
+    }
+
+    @Override
+    public String conseguirIdentificacion(){
+        return this.getModelo() + "-" + this.numDeSerie;
+    }
+
+    public abstract void realizarPrueba();//Metodo común para todas las aeronaves para realizar pruebas
+
+    public boolean isPruebaRealizada(){
+        return pruebaRealizada;
+    }
 
 }

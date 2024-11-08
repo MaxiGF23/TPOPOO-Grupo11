@@ -1,8 +1,13 @@
-Se trata de un sistema de gestión de empleados para una fábrica de aeronaves. La fábrica cuenta con dos líneas de producción: aeronaves de alas rotativas (helicópteros) y aeronaves de alas fijas (aviones).
+## TPO - Paradigma Orientado a Objetos
 
-Cada línea de producción está destinada a dos mercados distintos: el mercado civil y el mercado militar.
+AeroFactory es un fabricante de aeronaves cuya línea de producción se clasifica en dos categorías principales: aeronaves de alas fijas (aviones) y aeronaves de alas rotativas (helicópteros).
+Además, independientemente del tipo de aeronave existe la clasificacion basada en el tipo de mercado: civil (comercial) o militar.
+El requerimiento llega de parte de los clientes quienes especifican la aeronave, posteriormente los pedidos seran asignados a un empleado y este sera responsable de velar por la correcta ejecucion de pruebas y entrega final de los mismos.
 
+El objetivo es desarrollar un sistema de gestión para la fábrica de aeronaves, que permita:
 
-El desafío radica en la asignación de empleados según sus responsabilidades, para minimizar los riesgos de filtración de componentes de
-uso militar avanzado o planos de aeronaves civiles. Además, el sistema debe permitir la reasignación de empleados entre las líneas de producción cuando
-sea necesario. Este cambio de línea de producción debe realizarse bajo la autorización de un supervisor, quien ingresará con las credenciales adecuadas.
+- Registrar nuevos clientes.
+- Generar pedidos específicos de aeronaves.
+- Asignar empleados a la construcción de aeronaves.
+- Ejecutar las pruebas de calidad para asegurar que puede ser entregada al cliente.
+- Entregar el producto.

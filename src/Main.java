@@ -23,6 +23,9 @@ public class Main {
         EjercitoArgentino.realizarPedido(UH60);
         EjercitoArgentino.realizarPedido(Cessna);
 
+        //Mostramos la cantidad de aeronaves asignadas (no se deben repetir)
+        Jorge.cantidadDeAeronavesAsignadas();
+
         //Entrega de Aeronave. No debería ser válida ya que no hizo las pruebas.
         EjercitoArgentino.EntregaAeronave(UH60);
 

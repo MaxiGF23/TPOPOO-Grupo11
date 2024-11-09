@@ -1,15 +1,21 @@
 import Aeronaves.*;
 import interfaces.Identificable;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Empleados implements Identificable {
     private String nombre;
     private Aeronave aeronaveAsignada;
-    private final int rango;
+    private int rango;
+    private Set<Aeronave> aeronavesAsignadas;
+
 
 
     public Empleados(String nombre, int rango){
         this.nombre = nombre;
         this.rango = rango;
+        this.aeronavesAsignadas = new HashSet<>();
     }
 
     public String getNombre(){
@@ -27,6 +33,7 @@ public class Empleados implements Identificable {
                 rangoMinimo = ((AeronaveMilitarAlaRotativa) aeronave).rangoMinimoDeTrabajo();
             }
             if(rango >= rangoMinimo){
+                aeronavesAsignadas.add(aeronave);
                 this.aeronaveAsignada = aeronave;
                 System.out.println("Aeronave militar " + aeronave.getModelo() + " asignada a " + this.nombre);
             }
@@ -40,8 +47,15 @@ public class Empleados implements Identificable {
 
     }
 
+    public void cantidadDeAeronavesAsignadas() {
+        System.out.println("Cantidad de Aeronaves asignadas al empleado: " + this.getNombre() + ": " + aeronavesAsignadas.size());
+    }
+
+
+
     public void asignarAeronaveCivil(Aeronave aeronave){
         if(aeronave instanceof AeronaveCivilAlaRotativa || aeronave instanceof AeronaveCivilAlaFija){
+            aeronavesAsignadas.add(aeronave);
             this.aeronaveAsignada = aeronave;
             System.out.println("Aeronave civil " + aeronave.getModelo() + " asignada a " + this.nombre);
         }

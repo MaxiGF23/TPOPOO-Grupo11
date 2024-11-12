@@ -9,6 +9,6 @@ public abstract class AlaFija extends Aeronave{
     @Override
     public void realizarPrueba(){
         this.pruebaRealizada = true;
-        System.out.println("Realizando prueba de vuelo de aeronave civil: " + this.getModelo());
+        System.out.println("Realizando prueba de vuelo de aeronave ala fija: " + this.getModelo());
     }
 }

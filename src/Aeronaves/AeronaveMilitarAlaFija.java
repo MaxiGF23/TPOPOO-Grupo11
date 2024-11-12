@@ -12,11 +12,11 @@ public class AeronaveMilitarAlaFija extends AlaFija {
         this.rangoMinimo = rangoMinimo;
     }
 
-    @Override
+   /* @Override
     public void realizarPrueba(){
         this.pruebaRealizada=true;
         System.out.println("La aeronave militar está: "+ this.getModelo() +" realizando pruebas de vuelo");
-    }
+    }*/
 
     public int rangoMinimoDeTrabajo(){
         return this.rangoMinimo;

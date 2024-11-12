@@ -8,9 +8,9 @@ public class AeronaveCivilAlaRotativa extends AlaRotativa {
         this.esVIP = esVip;
     }
 
-    @Override
+   /* @Override
     public void realizarPrueba(){
         this.pruebaRealizada=true;
         System.out.println("El helicóptero civil: " + this.getModelo() + "está realizando pruebas");
-    }
+    }*/
 }

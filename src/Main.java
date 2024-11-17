@@ -1,51 +1,38 @@
 import Aeronaves.*;
 
 public class Main {
-    public static void main(String[] args) {
+ public static void main(String[] args) {
+  // Crear una aeronave (civil o militar)
+  AeronaveCivilAlaFija cessna = new AeronaveCivilAlaFija(
+          "Cessna 172", "C172-001", 1200, 4, 140, 1);
 
-        //Creación de empleados
-       Empleados jorge = new Empleados("Jorge", 1);
-       Empleados david = new Empleados("David", 5);
+  // Crear un cliente
+  System.out.println("=== Se registra un nuevo cliente en el sistema ===");
+  Cliente clienteCivil = new Cliente("Aeroclub Central", "Civil");
 
-       //Creación de Aeronaves
-        AeronaveCivilAlaFija cessna = new AeronaveCivilAlaFija("Cessna P10", "LV050", 1200, 3, 300);
-        AeronaveMilitarAlaRotativa uh60 = new AeronaveMilitarAlaRotativa("UH60", "AE-012", 2000, 16, 400, 4, 2, true, 4);
-        AeronaveCivilAlaRotativa bell407 = new AeronaveCivilAlaRotativa("Bell 407", "LV91218", 1000, 6, 400, 5, 2, false);
+  // Cliente realiza un pedido
+  System.out.println("=== Cliente realiza un pedido ===");
+  clienteCivil.realizarPedido(cessna);
 
-        //Este helicóptero tiene más aspas que las necesarias, no debería poder pasar la prueba.
-         bell407.realizarPrueba();
+  System.out.println("=== Chequeando pedidos activos del cliente ===");
+  clienteCivil.imprimirPedidos();
 
-        //Asignamos aeronaves. Jorge no debería poder trabajar en el UH60 por su rango.
-        jorge.asignarAeronaveMilitar(uh60);
+  // Crear un empleado
+  System.out.println("=== Se genera un nuevo empleado ===");
+  Empleados ingenieroAeronaveCivil = new Empleados("Juan Pérez", 5);
 
-        jorge.asignarAeronaveCivil(cessna);
-        david.asignarAeronaveMilitar(uh60);
+  // Asignar la aeronave al empleado
+  System.out.println("=== Asignar aeronave al empleado ===");
+  ingenieroAeronaveCivil.asignarAeronaveCivil(cessna);
+  ingenieroAeronaveCivil.imprimirAeronavesAsignadas();
+  System.out.println();
 
-        //Creamos cliente.
-        Cliente ejercitoargentino = new Cliente("Ejercito Argentino", "Militar");
-        ejercitoargentino.realizarPedido(uh60);
-        ejercitoargentino.realizarPedido(uh60);
-        ejercitoargentino.realizarPedido(cessna);
+  // Empleado realiza la prueba de la aeronave
+  System.out.println("=== Empleado realiza prueba de la aeronave ===");
+  ingenieroAeronaveCivil.realizarPruebaAeronave(cessna, clienteCivil);
 
-        //Mostramos la cantidad de aeronaves asignadas (no se deben repetir)
-        jorge.cantidadDeAeronavesAsignadas();
-
-        //Entrega de Aeronave. No debería ser válida ya que no hizo las pruebas.
-        ejercitoargentino.EntregaAeronave(uh60);
-
-        uh60.realizarPrueba();
-
-        //Con la prueba realizada debería poder entregarse la aeronave.
-        ejercitoargentino.EntregaAeronave(uh60);
-
-        jorge.reasignarAeronaveCivil(uh60);
-
-        //Impresión de la colección con los pedidos
-        ejercitoargentino.imprimirPedidos();
-
-
-
-
-
-    }
+  // Verificar pedidos restantes
+  System.out.println("=== Chequeando pedidos activos del cliente ===");
+  clienteCivil.imprimirPedidos();
+ }
 }

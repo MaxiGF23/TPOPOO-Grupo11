@@ -7,10 +7,4 @@ public class AeronaveCivilAlaRotativa extends AlaRotativa {
         super(modelo, numDeSerie, pesoMaximo, capacidad, velocidadMaxima, cantAspas, cantRotores);
         this.esVIP = esVip;
     }
-
-   /* @Override
-    public void realizarPrueba(){
-        this.pruebaRealizada=true;
-        System.out.println("El helicóptero civil: " + this.getModelo() + "está realizando pruebas");
-    }*/
 }

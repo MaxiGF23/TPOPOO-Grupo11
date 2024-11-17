@@ -7,10 +7,25 @@ public abstract class Aeronave implements Identificable {
     protected int pesoMaximo;
     protected int capacidad;
     protected double velocidadMaxima;
-    protected boolean pruebaRealizada;
+    protected boolean pruebaExitosa;
 
-    public Aeronave(String modelo, String numDeSerie, int pesoMaximo, int capacidad, double velocidadMaxima)
-    {
+    public Aeronave(String modelo, String numDeSerie, int pesoMaximo, int capacidad, double velocidadMaxima) {
+        if (modelo == null || modelo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El modelo no puede estar vacío");
+        }
+        if (numDeSerie == null || numDeSerie.trim().isEmpty()) {
+            throw new IllegalArgumentException("El número de serie no puede estar vacío");
+        }
+        if (pesoMaximo <= 0) {
+            throw new IllegalArgumentException("El peso máximo debe ser mayor que 0");
+        }
+        if (capacidad <= 0) {
+            throw new IllegalArgumentException("La capacidad debe ser mayor que 0");
+        }
+        if (velocidadMaxima <= 0) {
+            throw new IllegalArgumentException("La velocidad máxima debe ser mayor que 0");
+        }
+
         this.modelo = modelo;
         this.numDeSerie = numDeSerie;
         this.pesoMaximo = pesoMaximo;
@@ -18,13 +33,16 @@ public abstract class Aeronave implements Identificable {
         this.velocidadMaxima = velocidadMaxima;
     }
 
-    public void mostrarInfo()
-    {
-        System.out.println("Modelo: "+ this.modelo);
-        System.out.println("Numero de Serie: "+ this.numDeSerie);
-        System.out.println("Peso máximo: "+ this.pesoMaximo);
-        System.out.println("Capacidad: " + this.capacidad);
-        System.out.print("Velocidad Máxima: " + this.velocidadMaxima +" knots");
+    public void mostrarInfo() {
+        try {
+            System.out.println("Modelo: " + this.modelo);
+            System.out.println("Numero de Serie: " + this.numDeSerie);
+            System.out.println("Peso máximo: " + this.pesoMaximo);
+            System.out.println("Capacidad: " + this.capacidad);
+            System.out.println("Velocidad Máxima: " + this.velocidadMaxima + " knots");
+        } catch (Exception e) {
+            System.err.println("Error al mostrar la información: " + e.getMessage());
+        }
     }
 
     public String getNumeroDeSerie()
@@ -37,14 +55,15 @@ public abstract class Aeronave implements Identificable {
     }
 
     @Override
-    public String conseguirIdentificacion(){
+    public String conseguirIdentificacion() {
         return this.getModelo() + "-" + this.numDeSerie;
     }
 
-    public abstract void realizarPrueba();//Metodo común para todas las aeronaves para realizar pruebas
+    //Metodo común para todas las aeronaves para realizar pruebas
+    public abstract void realizarPrueba();
 
-    public boolean isPruebaRealizada(){
-        return pruebaRealizada;
+    public boolean isListaParaEntregar(){
+        return pruebaExitosa;
     }
 
 }

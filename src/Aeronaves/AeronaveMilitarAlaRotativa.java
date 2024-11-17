@@ -10,11 +10,6 @@ public class AeronaveMilitarAlaRotativa extends AlaRotativa {
         this.rangoMinimo = rangoMinimo;
     }
 
-   /* public void realizarPrueba(){
-        this.pruebaRealizada = true;
-        System.out.println("El helicóptero militar: " + this.getModelo() + "está realizando pruebas");
-    }*/
-
     public int rangoMinimoDeTrabajo(){
         return this.rangoMinimo;
     }

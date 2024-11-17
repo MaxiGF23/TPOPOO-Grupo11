@@ -19,7 +19,7 @@ public class Main {
 
   // Crear un empleado
   System.out.println("=== Se genera un nuevo empleado ===");
-  Empleados ingenieroAeronaveCivil = new Empleados("Juan Pérez", 5);
+  Empleado ingenieroAeronaveCivil = new Empleado("Juan Pérez", 5);
 
   // Asignar la aeronave al empleado
   System.out.println("=== Asignar aeronave al empleado ===");

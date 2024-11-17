@@ -4,12 +4,12 @@ import interfaces.Identificable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Empleados implements Identificable {
+public class Empleado implements Identificable {
     private final String nombre;
     private final int rango;
     private final Set<Aeronave> aeronavesAsignadas;
 
-    public Empleados(String nombre, int rango) {
+    public Empleado(String nombre, int rango) {
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre del empleado no puede estar vacío");
         }

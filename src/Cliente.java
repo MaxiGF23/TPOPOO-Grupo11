@@ -37,10 +37,6 @@ public class Cliente implements Identificable {
         return tipoCliente;
     }
 
-    public List<Aeronave> getPedidos() {
-        return new ArrayList<>(pedidos);
-    }
-
     public void realizarPedido(Aeronave aeronave) {
         try {
             if (aeronave == null) {

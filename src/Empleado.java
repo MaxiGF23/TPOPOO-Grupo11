@@ -46,15 +46,6 @@ public class Empleado implements Identificable {
         System.out.println("Aeronave militar " + aeronave.getModelo() + " asignada a " + this.nombre);
     }
 
-    public void cantidadDeAeronavesAsignadas() {
-        try {
-            System.out.println("Cantidad de Aeronaves asignadas al empleado " +
-                    this.getNombre() + ": " + aeronavesAsignadas.size());
-        } catch (Exception e) {
-            System.err.println("Error al mostrar la cantidad de aeronaves: " + e.getMessage());
-        }
-    }
-
     public void asignarAeronaveCivil(Aeronave aeronave) {
         try {
             if (aeronave == null) {

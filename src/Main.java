@@ -4,7 +4,7 @@ public class Main {
  public static void main(String[] args) {
   // Crear una aeronave (civil o militar)
   AeronaveCivilAlaFija cessna = new AeronaveCivilAlaFija(
-          "Cessna 172", "C172-001", 1200, 4, 140, 1);
+          "Cessna 172", "C172-001", 1200, 4, 140, 1, false);
 
   // Crear un cliente
   System.out.println("=== Se registra un nuevo cliente en el sistema ===");

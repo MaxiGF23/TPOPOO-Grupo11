@@ -9,6 +9,7 @@ public abstract class Aeronave implements Identificable {
     protected double velocidadMaxima;
     protected boolean pruebaExitosa;
 
+
     public Aeronave(String modelo, String numDeSerie, int pesoMaximo, int capacidad, double velocidadMaxima) {
         if (modelo == null || modelo.trim().isEmpty()) {
             throw new IllegalArgumentException("El modelo no puede estar vacío");
@@ -33,7 +34,7 @@ public abstract class Aeronave implements Identificable {
         this.velocidadMaxima = velocidadMaxima;
     }
 
-    public void mostrarInfo() {
+    public void imprimirInfo() {
         try {
             System.out.println("Modelo: " + this.modelo);
             System.out.println("Numero de Serie: " + this.numDeSerie);
